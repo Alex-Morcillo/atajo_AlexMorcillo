@@ -13,18 +13,19 @@ public class Bicicleta {
         String marca = "Orbea";
     }
     
+    public static int calculateWays(int[] way){
+        int sum = 0;
+        for (int i = 0; i < way.length; i++) {
+            sum += way[i];
+        }
+        return sum;
+    }
+    
     public static String rutaCorta(int [] camino1, int [] camino2, int [] camino3)
     {
-        int sum1 = 0;
-        int sum2 = 0;
-        int sum3 = 0;
-        
-        for(int i=0; i<camino1.length; i++)
-        {
-            sum1 += camino1[i];
-            sum2 += camino2[i];
-            sum3 += camino3[i];
-        }
+        int sum1 = calculateWays(camino1);
+        int sum2 = calculateWays(camino2);
+        int sum3 = calculateWays(camino3);
         
         if(sum1 < sum2 && sum1 < sum3)
         {
